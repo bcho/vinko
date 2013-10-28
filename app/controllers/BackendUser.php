@@ -28,8 +28,7 @@ class BackendUser extends Controller {
                 );
 
                 if (Auth::attempt($credentials)) {
-                    // TODO handle next parameters
-                    return Redirect::route('dashboard');
+                    return Redirect::intended('dashboard');
                 }
             }
 
