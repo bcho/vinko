@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Vinko's configurations
+ */
+
+return array(
+    'name' => 'vinko',
+
+    'admin' => array(
+        'username' => 'admin',
+        'password' => 'vinkoadmin'
+    )
+);

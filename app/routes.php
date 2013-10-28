@@ -11,7 +11,25 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', array('as' => 'home', function() {
     return 'hello, world!';
+}));
+
+
+// backend
+Route::group(array('prefix' => 'backend', 'before' => 'auth'), function() {
+    Route::get('/', array(
+        'as' => 'dashboard',
+        'uses' => 'Backend@dashboard'
+    ));
+
+    Route::get('/logout', array(
+        'as' => 'user_logout',
+        'uses' => 'BackendUser@logout'
+    ));
 });
+
+Route::any('/backend/login', array(
+    'as' => 'user_login',
+    'uses' => 'BackendUser@login'
+));
