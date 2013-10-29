@@ -7,7 +7,7 @@
 <body>
     <div class="container">
         <section id="login">
-            {{ Form::open(["route" => "user_login", "autocomplete" => "off" ]) }}
+            {{ Form::open(array("route" => "user_login", "autocomplete" => "off" )) }}
             {{ Form::label("username", "Username") }}
             {{ Form::text("username", Input::old("username")) }}
             {{ Form::label("password", "Password") }}
