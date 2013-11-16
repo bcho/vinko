@@ -13,7 +13,9 @@
 
 App::before(function($request)
 {
-	//
+    App::setLocale('zh_CN');
+
+    View::share('site', Site::find(1));
 });
 
 
@@ -35,7 +37,12 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('/backend/login');
+    if (Auth::guest()) {
+        return Redirect::guest('/backend/login');
+    } else {
+        View::share('current_user', Auth::user());
+        View::share('modules', Config::get('vinko.modules'));
+    }
 });
 
 

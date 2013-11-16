@@ -1,23 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>user login</title>
-</head>
-<body>
-    <div class="container">
-        <section id="login">
-            {{ Form::open(array("route" => "user_login", "autocomplete" => "off" )) }}
-            {{ Form::label("username", "Username") }}
-            {{ Form::text("username", Input::old("username")) }}
-            {{ Form::label("password", "Password") }}
-            {{ Form::password("password", Input::old("password")) }}
-            {{ Form::submit("login") }}
-            @if ($error = $errors->first("password"))
-                <div class="error">{{ $error }}</div>
-            @endif
+@extends('backend.layout')
+
+@section('title')
+vinko - 后台登录
+@stop
+
+@section('container') 
+<div class="container medium">
+    <div class="wrapper" id="login">
+        @include('backend.parts.alert')
+        <div class="grid">
+            <header>
+                <h1>欢迎回来</h1>
+            </header>
+            {{ Form::open(array(
+                    "route" => "post_backend_login",
+                    "autocomplete" => "off",
+                    "class" => "pure-form pure-form-aligned"
+                ))
+            }}
+            <div class="pure-control-group">
+                {{ Form::label("username", "用户名") }}
+                {{ Form::text("username", Input::old("username"),
+                              array("class" => "pure-u-1-2"))
+                }}
+            </div>
+            <div class="pure-control-group">
+                {{ Form::label("password", "密码") }}
+                {{ Form::password("password", array("class" => "pure-u-1-2")) }}
+            </div>
+            <div class="pure-controls">
+                <button class="pure-button pure-button-primary" type="submit">登入</button>
+            </div>
             {{ Form::close() }}
-        </section>
+        </div>
     </div>
-</body>
-</html>
+    </div>
+@stop
