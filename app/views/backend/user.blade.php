@@ -1,5 +1,5 @@
 @extends('backend.module')
-{{{-- */$current = 'user';/* --}}}
+{{-- */$current = 'user';/* --}}
 
 @section('module_name')
 用户信息
