@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-广盛达 - 后台管理
+{{ $site['name'] }} - 后台管理
 @stop
 
 @section('container')
