@@ -1,8 +1,8 @@
 @extends('backend.module')
-{{-- */$current = 'site';/* --}}
+{{{-- */$current = 'site';/* --}}}
 
 @section('module_name')
-{{ $site['name'] }} 的信息
+{{{ $site['name'] }}} 的信息
 @stop
 
 @section('module_content')
