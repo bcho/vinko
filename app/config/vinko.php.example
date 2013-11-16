@@ -5,8 +5,28 @@
  */
 
 return array(
-    'name' => 'vinko',
+    // site info
+    'site' => array(
+        'name' => 'vinko'
+    ),
 
+    // modules
+    'modules' => array(
+        array(
+            'slug' => 'site',
+            'name' => '站点信息',
+            'icon' => 'building-o',
+            'route' => URL::route('get_backend_site')
+        ),
+        array(
+            'slug' => 'user',
+            'name' => '用户信息',
+            'icon' => 'user',
+            'route' => URL::route('get_backend_user')
+        )
+    ),
+
+    // bootstrap users
     'admin' => array(
         'username' => 'admin',
         'password' => 'vinkoadmin'
