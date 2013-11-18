@@ -2,7 +2,7 @@
 
 namespace Backend;
 
-use \utils\FormValidation;
+use \Vinko\Utils\FormValidation;
 use \Illuminate\Support\Facades\View;
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace utils;
+namespace Vinko\utils;
 
 use \Illuminate\Support\Facades\Input;
 
